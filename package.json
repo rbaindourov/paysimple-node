@@ -1,0 +1,28 @@
+{
+  "name": "paysimple-node",
+  "version": "1.0.0",
+  "description": "NodeJS example of PaySimple.com API integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbaindourov/paysimple-node.git"
+  },
+  "keywords": [
+    "PaySimple",
+    "API",
+    "NodeJS"
+  ],
+  "author": "Robert Baindourov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbaindourov/paysimple-node/issues"
+  },
+  "homepage": "https://github.com/rbaindourov/paysimple-node#readme",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "request": "^2.63.0"
+  }
+}
