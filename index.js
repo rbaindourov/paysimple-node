@@ -1,19 +1,20 @@
+'use strict'
+let crypto =  require('crypto')
+let request = require('request');
 
-var crypto =  require('crypto')
-var request = require('request');
+let userName = "";
+let superSecretCode = "";
+let url = "https://sandbox-api.paysimple.com/v4/payment";
 
-var userName = "";
-var superSecretCode = "";
-var url = "https://sandbox-api.paysimple.com/v4/payment";
+let iso =  new Date().toISOString()
+let hmac = crypto.createHmac('sha256', superSecretCode).update(new Buffer( iso ).toString() ).digest('base64')
 
-var iso =  new Date().toISOString()
-var hmac = crypto.createHmac('sha256', superSecretCode).update(new Buffer( iso ).toString() ).digest('base64')
-
-var headers = {
+let headers = {
   "Authorization":"PSSERVER AccessId = " + userName + "; Timestamp = " + iso + "; Signature = " + hmac
 }
 
-function httpsHandler(err, response, body) {
+
+request.get( {url:url, strictSSL: false, headers:headers}, (err, response, body) => {
 
     if( err ) {
       console.error('to err is human', err)
@@ -22,6 +23,4 @@ function httpsHandler(err, response, body) {
 
     console.log( body );
 
-}
-
-request.get( {url:url, strictSSL: false, headers:headers}, httpsHandler);
+});
