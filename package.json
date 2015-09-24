@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/rbaindourov/paysimple-node#readme",
   "dependencies": {
-    "crypto": "0.0.3",
     "request": "^2.63.0"
   }
 }
