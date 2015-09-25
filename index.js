@@ -10,7 +10,7 @@ let iso =  new Date().toISOString()
 let hmac = crypto.createHmac('sha256', superSecretCode).update(new Buffer( iso ).toString() ).digest('base64')
 
 let headers = {
-  "Authorization":`PSSERVER AccessId = ${userName}; Timestamp = ${iso}; Signature =  ${hmac}`
+  "Authorization":`PSSERVER AccessId = ${userName}; Timestamp = ${iso}; Signature = ${hmac}`
 }
 
 
